@@ -1,5 +1,5 @@
 # Features
--Log In/Sign Up
+<!-- -Log In/Sign Up
     -Sign In/Sign Up form
     -redirect to Browse Page
 -Browse Page(after authentication)
@@ -11,4 +11,17 @@
              -MovieLists*n
 -NetflixGPT
     -Search Bar
-    -Movie Suggestions
+    -Movie Suggestions -->
+- Log In/Sign Up
+     - Sign In/Sign Up form
+     - Redirect to Browse Page after authentication
+- Browse Page (after authentication)
+     - Header
+     - Main Movie
+          - Trailer in Background
+          - Title and Background
+          - Movie Suggestions
+               - Movie Lists (*n)
+- NetflixGPT
+    - Search Bar
+    - Movie Suggestions
