@@ -1,5 +1,5 @@
 # Features
---Log In/Sign Up
+-Log In/Sign Up
     -Sign In/Sign Up form
     -redirect to Browse Page
 -Browse Page(after authentication)
