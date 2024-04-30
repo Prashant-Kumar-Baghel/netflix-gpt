@@ -20,6 +20,13 @@
 - Add hardcoded values to the constants files.
 - Register TMBD API and create an app and get access token.
 - Fetch data from TMDB now playing  Movies list API (we get data from TMDB , it is movie database)
+- Custom hook for Now Playing Movie
+- Update Store with Movie data
+- Planning for MainContainer and SecondaryContainer
+- Fetch data for Trailer Video
+- Update store with Trailer Video Data
+- Embedded the youtube video and make it autoplay and mute
+- Tailwind classes to make Main Container look awesome
 
 # Features
 - Log In/Sign Up
