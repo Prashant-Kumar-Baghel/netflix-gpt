@@ -1,8 +1,16 @@
-import Body from "./components/Body"
+
+import Browse from "./components/Browse";
+
 function App() {
+ 
   return (
     <div>
-      <Body/>
+      {/* We provided store to our body.  */}
+      {/* <Provider store={appStore}>
+          <Body/>
+      </Provider> */}
+      <Browse/>
+      
     </div>
   );
 }

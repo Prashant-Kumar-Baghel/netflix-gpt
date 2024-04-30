@@ -2,18 +2,37 @@
 - Create React App
 - Configured TailwindCSS
 - Header
+- Routing Of App
 - LogIn Form
+- Sign Up Form
+- Form Validation
+- useRef hook
+- Firebase SetUp
+- Deploying our app to production.
+- Create SignUp User Account
+- Implement Sign In user Api
+- Created Redux Store with userSlice
+- Implemented Sign Out
+- Update Profile.
+- BugFix : Sign up user displayName and profile  picture update.
+- BugFix: if the user is not logged in then redirect /browse to Login Page and vice-versa.
+- unSubscribed to onStateAuthChanged event.
+- Add hardcoded values to the constants files.
+- Register TMBD API and create an app and get access token.
+- Fetch data from TMDB now playing  Movies list API (we get data from TMDB , it is movie database)
+
 # Features
 - Log In/Sign Up
      - Sign In/Sign Up form
      - Redirect to Browse Page after authentication
 - Browse Page (after authentication)
      - Header
-     - Main Movie
-          - Trailer in Background
-          - Title and Background
-          - Movie Suggestions
-               - Movie Lists (*n)
+     - MainContainer
+         - VideoBackground
+         - VideoTittle
+     - SecondaryContainer
+         - MoviesList * n
+              -cards * n
 - NetflixGPT
     - Search Bar
     - Movie Suggestions
