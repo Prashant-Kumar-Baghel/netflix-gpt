@@ -10,5 +10,6 @@ const options = {//we need options in many places hence put inside constants fil
       Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyOGJlMzNjYjRhOWVkYmZjMGRiMTg1ZWQ1NGQzYWY4NSIsInN1YiI6IjY2MmQ3MjkyMDNiZjg0MDEyYWVhNmYxMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9URPTVROdC05HyezlxOxHRgIc1gp2icCnG-dmXZFGZs'
     }
   };
-export {LOGO_URL,LOGIN_URL,USER_ICON,IMG_URL,options};//Always use constants instead of string.
+  const poster_IMG_CDN="https://image.tmdb.org/t/p/w500";
+export {LOGO_URL,LOGIN_URL,USER_ICON,IMG_URL,options,poster_IMG_CDN};//Always use constants instead of string.
 

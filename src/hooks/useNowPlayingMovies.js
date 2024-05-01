@@ -7,6 +7,7 @@ import { options } from "../utils/constants";
 const useNowPlayingMovies=()=>{
     const dispatch=useDispatch();
   const fetchData=async ()=>{
+    //we remove language=en-US from below api url as we don't want only english movies. 
     const response=await fetch('https://api.themoviedb.org/3/movie/now_playing?page=1',options);
     const data = await response.json();
 
