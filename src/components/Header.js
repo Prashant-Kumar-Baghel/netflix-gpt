@@ -21,6 +21,12 @@ const Header=()=>{
         navigate("/error");//we will create this error page.
         });
     }
+
+    
+    const handleGptSearchClick=()=>{
+      //Toogle GPT Search Button
+    }
+
     //Using useSelector to read data;
     const user=useSelector((store)=>store.user)
 
@@ -74,6 +80,11 @@ const Header=()=>{
 
                     {/* we write this condition because Below jsx(like Sign Out) also rendered at Login page header but we only want to rendered on browse page so when we Sign In then we have user hence then only we renderd jsx. if user is null then we willnot rendered jsx. */}
                     {user && <div className="flex items-center gap-2">
+                      {/* We want when user click on GPT Search button then show GPT SearchBar and when again click on GPT Search button then don't show GPT SearchBar and for that we apply tooglebutton approach  */}
+                      <button 
+                      className="text-white bg-purple-950 px-4 py-2 outline-none rounded-md mx-4"
+                      onClick={handleGptSearchClick}
+                      >GPT Search</button>
                         <img src={user?.photoURL} className="w-10" alt="" />
                         <button onClick={handleButtonClick}  className="text-white">Sign Out</button>
                     </div>}
