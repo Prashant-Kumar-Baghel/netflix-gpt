@@ -38,9 +38,12 @@
 - useTopRatedMovies Custom Hook 
 - useTrendingMovies Custom Hook 
 - useUpComingMovies Custom Hook 
-- GPT Search Feature .
+- GPT Search Page .
 - we use GPt as a movie recommandation system.
-- we are using OPENAI GPT API.(chatgpt is an interface(frontend) on top of gpt api which built by OPEN AI)
+- we are using OPENAI GPT API.(chatgpt is an interface(frontend) on top of gpt api which built by OPEN AI.
+- GPT Search Bar
+- Multi-language feature in our App.
+- Integrate GPT APIS .
 
 # Features
 - Log In/Sign Up

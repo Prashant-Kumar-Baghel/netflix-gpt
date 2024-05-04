@@ -6,10 +6,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 
 import { addUser, removeUser } from "../utils/userSlice";
-
+import { toggleGptSearchView } from "../utils/gptSlice";
+import { langCategory } from "../utils/languageConstants";
+import { changeLanguage } from "../utils/configSlice";
 const Header=()=>{
     const navigate=useNavigate();
     const dispatch = useDispatch();
+    const isShowGptSeach=useSelector((store)=>store.gpt.isShowGptSeach);
     const handleButtonClick=()=>{
         //Sign Out API Path:-  Search Firebase Auth. -> Web ->Pasword Authentication
         signOut(auth).then(() => {
@@ -25,6 +28,15 @@ const Header=()=>{
     
     const handleGptSearchClick=()=>{
       //Toogle GPT Search Button
+      // we have two ways to toogle 1)create an state variable and based on that state variable show GptSearchpage.2)When we already using redux store which is central store then we use that redux store to store the information that we should show GptSearchpage or not . this is how we use redux store to manage state variable.
+      //we create new slice to store the toogle information.
+      dispatch(toggleGptSearchView());
+    }
+
+    const handleOnChange=(e)=>{
+      //we store the language data inside redux store . we create the new slice called as configSlice. 
+      //Here we use e.target.value to get value of select box but we can also use ref(useRef hook) to get value of select box.
+      dispatch(changeLanguage(e.target.value))
     }
 
     //Using useSelector to read data;
@@ -80,11 +92,25 @@ const Header=()=>{
 
                     {/* we write this condition because Below jsx(like Sign Out) also rendered at Login page header but we only want to rendered on browse page so when we Sign In then we have user hence then only we renderd jsx. if user is null then we willnot rendered jsx. */}
                     {user && <div className="flex items-center gap-2">
-                      {/* We want when user click on GPT Search button then show GPT SearchBar and when again click on GPT Search button then don't show GPT SearchBar and for that we apply tooglebutton approach  */}
+
+                      {/* Value of option in select should be same as key in lang object present inside languageConstants .  */}
+                      {/* We made select field dynamic by executing map on array. which is called modular coding as we generating options dynamically.*/}
+                      
+                      {/* we show language select filed only for GptSearchPage hence we aply below condition. */}
+                     {
+                      // Now we can see how we can hide or show something on state change and Here we do it using redux as we have not used useState hook for that. redux is managing the data layer, we are not using useState or any other hook. 
+                      isShowGptSeach &&  <select onChange={handleOnChange}
+                      className="p-2 bg-gray-900 text-white">
+                        {langCategory?.map((langItem)=><option value={langItem.langValue} key={langItem.langType}>{langItem.langType}</option>)}
+                      </select>
+                     }
+
+                      {/* We want when user click on GPT Search button then show GPT SearchBar page(hide maincontainer and secondarycontainer)  and when again click on GPT Search button then don't show GPT SearchBar page(show maincontainer and secondarycontainer) and for that we apply tooglebutton approach  */}                     
                       <button 
-                      className="text-white bg-purple-950 px-4 py-2 outline-none rounded-md mx-4"
+                      className="text-white bg-purple-700 px-4 py-2 outline-none rounded-md mx-4"
                       onClick={handleGptSearchClick}
-                      >GPT Search</button>
+                      >{isShowGptSeach?"HomePage":"GPT Search"}</button>
+
                         <img src={user?.photoURL} className="w-10" alt="" />
                         <button onClick={handleButtonClick}  className="text-white">Sign Out</button>
                     </div>}
